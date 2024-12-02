@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Desktop/ProfileWeb/picture"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

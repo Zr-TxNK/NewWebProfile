@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อนาคต</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Basic styles for the body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            font-family: 'Inter', sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* Main container for the CV with fixed dimensions */
+        .cv-container {
+            width: 1000px;
+            height: 1409px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden; /* Ensures content stays within the fixed size */
+        }
+
+        /* Left column styling */
+        .left-column {
+            width: 35%;
+            background-color: #eaf4ff; /* Pastel Blue */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            color: #2c3e50; /* Dark Slate Blue text for contrast */
+        }
+
+        /* Right column styling */
+        .right-column {
+            width: 65%;
+            padding: 40px;
+            overflow-y: auto; /* Allow scrolling if content exceeds height */
+        }
+
+        /* Profile picture section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #d4e6f1;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #5c9ded; /* Stronger Pastel Blue */
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* General section styling */
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
+        
+        .left-column .section {
+             border-bottom: 1px solid #d4e6f1; /* Lighter border for left column */
+        }
+        .right-column .section {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Section title styling */
+        h2 {
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .left-column h2 {
+            font-size: 26px; /* Larger font size */
+            color: #2c3e50;
+        }
+        
+        .right-column h2 {
+            font-size: 24px; /* Original font size */
+            color: #e57373; /* Pastel Red */
+        }
+
+        h2 .icon {
+            margin-right: 12px;
+        }
+        
+        .left-column h2 .icon {
+             font-size: 24px; /* Larger icon size */
+        }
+        .right-column h2 .icon {
+             font-size: 22px; /* Original icon size */
+        }
+
+        /* Specific styling for the header section in the right column */
+        .header-section {
+            text-align: left;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .header-section h1 {
+            font-size: 48px; /* Original font size */
+            font-weight: 700;
+            margin: 0;
+            color: #2c3e50; /* Dark Slate Blue */
+        }
+
+        .header-section .job-title {
+            font-size: 24px; /* Original font size */
+            font-weight: 500;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Paragraph and list styling */
+        p, .right-column ul {
+            font-size: 20px; /* Original font size */
+            line-height: 1.6;
+            margin: 0;
+            color: #555;
+        }
+        
+        .right-column ul {
+             list-style-type: disc;
+             padding-left: 20px;
+        }
+
+        .left-column ul {
+            padding-left: 0;
+            list-style-type: none;
+            font-size: 18px; /* Larger font size */
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+        
+        .left-column li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px; /* Larger margin */
+        }
+        
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        .left-column .section ul .icon {
+             width: 20px;
+             text-align: center;
+             margin-right: 15px;
+             color: #5c9ded; /* Stronger Pastel Blue for icons */
+        }
+
+        /* Contact info styling */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 18px; /* Larger font size */
+        }
+        .contact-item .icon {
+            font-size: 20px; /* Larger icon size */
+            width: 20px;
+            text-align: center;
+            margin-right: 15px;
+            color: #5c9ded; /* Stronger Pastel Blue for icons */
+        }
+        .contact-item div {
+            flex: 1;
+        }
+        .contact-item strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+        
+        /* Work experience and education item styling */
+        .job, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .job:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title-role, .degree {
+            font-size: 20px; /* Original font size */
+            font-weight: 700;
+            color: #2c3e50; /* Dark Slate Blue */
+        }
+
+        .company, .university {
+            font-size: 18px; /* Original font size */
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 16px; /* Original font size */
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- CV Container with fixed dimensions -->
+    <div class="cv-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Profile Picture Section -->
+            <div class="profile-section">
+                <img src="a.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="section">
+                <h2><i class="fas fa-address-book icon"></i>Contact</h2>
+                <div class="contact-item">
+                    <i class="fas fa-phone icon"></i>
+                    <div>
+                        <strong>Phone:</strong>
+                        <span>090-326-1727</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope icon"></i>
+                    <div>
+                        <strong>Email:</strong>
+                        <span>phurin.cps@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe icon"></i>
+                    <div>
+                        <strong>Website:</strong>
+                        <span><a href="https://phurin.win">phurin.com</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <h2><i class="fas fa-cogs icon"></i>Skills</h2>
+                <ul>
+                    <li><i class="fab fa-html5 icon"></i>HTML & CSS</li>
+                    <li><i class="fab fa-js-square icon"></i>JavaScript </li>
+                    <li><i class="fab fa-java icon"></i>Java</li>
+                    <li><i class="fab fa-node icon"></i>NodeJS</li>
+                    <li><i class="fab fa-react icon"></i>ReactJS</li>
+                    <li><i class="fab fa-php icon"></i>PHP</li>
+                    <li><i class="fas fa-database icon"></i>SQL Databases</li>
+                    <li><i class="fas fa-magnifying-glass-chart icon"></i>Marketing</li>
+                    <li><i class="fab fa-youtube icon"></i>Content Creating</li>
+                </ul>
+            </div>
+
+            <!-- Hobbies Section -->
+            <div class="section">
+                <h2><i class="fas fa-heart icon"></i>Hobbies</h2>
+                <ul>
+                    <li><i class="fas fa-person-swimming icon"></i>Swimming</li>
+                    <li><i class="fas fa-camera-retro icon"></i>Photography</li>
+                    <li><i class="fas fa-gamepad icon"></i>Playing game</li>
+                    <li><i class="fas fa-utensils icon"></i>Cooking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Header Section (Name and Job Title) -->
+            <div class="header-section">
+                <h1>Phurin Chaiprasan</h1>
+                <div class="job-title">Full-Stack Developer & Vtuber Marketing</div>
+            </div>
+
+            <!-- Profile Text Section -->
+            <div class="section">
+                <h2><i class="fas fa-user-alt icon"></i>Profile</h2>
+                <p>
+                    สวัสดีครับ ผมชื่อภูรินท์ ชัยประสาน ชื่อเล่น ไตตั้น ตั้งแต่เด็ก ผมมีความสนใจในด้านคอมพิวเตอร์และการทำคลิปวิดีโอ ผมชอบเขียนโค้ดเพราะว่าผมภูมิใจที่ผู้คนมีความสุขในการใช้เว็ปไซต์ที่ผมเขียน เช่นเดียวกับการทำคลิปให้คนดูมีความสุข จากนั้นมาผมจึงค้นคว้าและพัฒนาตนเอง และนำความรู้เหล่านั้นไปพัฒนาสังคมครับ
+                </p>
+            </div>
+
+            <!-- Work Experience Section -->
+            <div class="section">
+                <h2><i class="fas fa-briefcase icon"></i>Work Experience</h2>
+                <div class="job">
+                    <div class="job-title-role">Full-Stack Developer</div>
+                    <div class="date">2028 - Present</div>
+                    <ul>
+                        <li>เป็น Full-Stack Developer และออกแบบเว็ปไซต์ ให้กับ <a href="https://mc.vtuberthai.com/">mc.vtuberthai.com</a></li>
+                        <li>Co-Founder และ Developer ให้กับ <a href="https://vtuberthai.com/">vtuberthai.com</a>เว็ปไซต์รวบรวมวีทูปเบอร์ไทยที่เยอะที่สุดในประเทศไทย</li>
+                        <li>Co-Founder และ Developer ให้กับ Lavender Shop ร้านขายอุปกรณ์คอมครบวงจร</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <div class="job-title-role">Content Marketing</div>
+                    <div class="date">Jun 2023 - Present</div>
+                    <ul>
+                        <li>เป็น Content Creator ให้กับค่ายวีทูปเบอร์อันดับต้นๆของประเทศไทย</li>
+                        <li>วางแผนคอนเท้นของวิดีโอให้สอดคล้องกับความต้องการของกลุ่มเป้าหมาย</li>
+                        <li>เป็นผู้ดูแลและจัดการ SEO ของเว็ปไซต์ <a href="https://vtuberthai.com/">vtuberthai.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
+                <div class="education-item">
+                    <div class="degree">Montfort College Secondary School</div>
+                    <div class="university">Chiang Mai</div>
+                    <div class="date">2018 - 2024</div>
+                    <p>เรียนมัธยมปลายสายวิทย์-คณิต</p>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Chiang Mai University</div>
+                    <div class="date">2025 - 202X</div>
+                    <p>วิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่</p>
+                    <p>สาขา บูรรณาการอุตสาหกรรมดิจิทัล</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

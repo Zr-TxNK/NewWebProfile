@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - ภูรินท์ ชัยประสาน</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff;
+            margin: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px-12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border-top: 5px solid #2c3e50;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a2533;
+            margin: 0;
+        }
+
+        .header .job-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #34495e;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #3498db;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: #34495e;
+        }
+
+        .section {
+            margin-top: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a2533;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary p {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .job {
+            margin-bottom: 1.5rem;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .job-header h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .job-header .date {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .job .company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 0.75rem;
+        }
+
+        .job ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .job ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .job a {
+            text-decoration: none;
+        }
+
+        .item-container {
+            margin-bottom: 1rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .item-header .date {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item-container .issuer {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-category li {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .expected-salary p {
+            font-size: 1.05rem;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .expected-salary strong {
+            color: #1a2533;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header .job-title {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .job-header,
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+        <header class="header">
+            <h1>ภูรินท์ ชัยประสาน</h1>
+            <p class="job-title">FullStack Developer</p>
+            <div class="contact-info">
+                <a href="tel:0903261727"><i class="fas fa-phone"></i> 090-326-1727</a>
+                <a href="mailto:somchai.dev@email.com"><i class="fas fa-envelope"></i> phurin.cps@email.com</a>
+                <span><i class="fas fa-map-marker-alt"></i> หางดง, เชียงใหม่</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="section summary">
+                <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+                <p>
+                    ผมมีประสบการณ์ในการพัฒนาเว็บแอปพลิเคชันตั้งแต่ Frontend จนถึง Backend มีความสามารถในการใช้
+                    JavaScript และ Node.js เพื่อสร้างผลิตภัณฑ์ที่มีประสิทธิภาพและตอบโจทย์ปัญหาลูกค้า
+                    มีความเข้าใจในหลักการ UX/UI
+                    เพื่อออกแบบและพัฒนาแอปพลิเคชันที่ใช้งานง่ายและสร้างประสบการณ์ที่ดีให้กับผู้ใช้
+                </p>
+            </section>
+
+            <section class="section experience">
+                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                <div class="job">
+                    <div class="job-header">
+                        <h3>Full Stack Developer</h3>
+                    </div>
+                    <p class="company"><a href="https://vtuberthai.com/">VtuberThai.com</a></p>
+                    <ul>
+                        <li>พัฒนาและดูแลเว็บแอปพลิเคชันหลักของบริษัทด้วย React.js และ Node.js</li>
+                        <li>จัดการ API สำหรับเชื่อมต่อระหว่าง Frontend และ Backend</li>
+                        <li>ทำงานร่วมกับทีม UX/UI Designer เพื่อนำดีไซน์มาพัฒนาเป็นหน้าเว็บที่ responsive
+                            และใช้งานได้จริง</li>
+                        <li>ปรับปรุงประสิทธิภาพของฐานข้อมูล SQL และเขียน Query ที่ซับซ้อนเพื่อดึงข้อมูล</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section training">
+                <h2><i class="fas fa-award"></i> Certificates & Training</h2>
+                <div class="item-container">
+                    <div class="item-header">
+                        <h3>UX/UI Foundation Program</h3>
+                        <span class="date">กรกฎาคม 2568</span>
+                    </div>
+                    <p class="issuer">จัดโดย บริษัท ที.ซี.ซี เทคโนโลยี จำกัด</p>
+                </div>
+            </section>
+
+            <section class="section education">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="item-container">
+                    <div class="item-header">
+                        <h3>วิทยาศาสตร์บัณฑิต (บูรณาการอุตสาหกรรมดิจิทัล)</h3>
+                        <span class="date">จบการศึกษา</span>
+                    </div>
+                    <p class="issuer">วิทยาลัยศิลปะ สื่อ และเทคโนโลยี</p>
+                    <p class="issuer">มหาวิทยาลัยเชียงใหม่</p>
+                </div>
+            </section>
+
+            <section class="section skills">
+                <h2><i class="fas fa-cogs"></i> Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <ul>
+                            <li>HTML,CSS</li>
+                            <li>JavaScript</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <ul>
+                            <li>Node.js </li>
+                            <li>SQL (MySQL)</li>
+                            <li>NoSQL (MongoDB)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>UX/UI & Tools</h3>
+                        <ul>
+                            <li>หลักการออกแบบ UX/UI</li>
+                            <li>Wireframing, Prototyping</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section expected-salary">
+                <h2><i class="fas fa-money-bill-wave"></i> Expected Salary</h2>
+                <p>
+                    <strong>เงินเดือนที่คาดหวัง:</strong> 25,000 - 35,000 บาท
+                    (สามารถต่อรองได้ตามโครงสร้างของบริษัทและขอบเขตความรับผิดชอบ)
+                </p>
+            </section>
+        </main>
+
+    </div>
+
+</body>
+
+</html>

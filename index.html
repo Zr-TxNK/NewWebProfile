@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <title>Main page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เว็บไซต์กำลังปรับปรุง</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(135deg, #8530c3, #4ec135);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      max-width: 500px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+    .loader {
+      border: 6px solid rgba(255,255,255,0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-    <div class="content fade-in">
-        <p>ヾ(＾∇＾)</p>
-        <p>Hello welcome to my Portfolio website .</p>
-        <p>my name is Phurin Chaiprasan .</p>
-        <p>(AKA. Titan)</p>
-    </div>
-    <div class="box-container fade-in">
-        <a href="page/about.html" class="box" data-tooltip="This page explain about my information and my skills">About me</a>
-        <a href="page/work.html" class="box" data-tooltip="This page show about my work that I spend my life for it">My work</a>
-        <a href="page/profile.html" class="box" data-tooltip="Welcome to my world 😎">Game profile</a>
-        <a href="page/contact.html" class="box" data-tooltip="This page show about my social media profile">Contact me</a>
-    </div>
-    <div class="copyright fade-in">
-        &copy; TxNK
-    </div>
+  <div class="container">
+    <h1>เว็บไซต์กำลังปรับปรุง</h1>
+    <p>ขออภัยในความไม่สะดวก<br>เรากำลังปรับปรุงเว็บไซต์ และจะกลับมาในเร็ว ๆ นี้</p>
+    <div class="loader"></div>
+  </div>
 </body>
 </html>
